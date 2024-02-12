@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      margin-bottom: 50px;
+    }
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">will u be my valentine? <3</h1>
+  <div class="button-container">
+    <button onclick="fineButton()">Yes!</button>
+    <button id="notFineButton" onclick="moveButton()">No!</button>
+  </div>
+  <script>
+    function moveButton() {
+      var button = document.getElementById('notFineButton');
+      var x = Math.random() * (window.innerWidth - button.offsetWidth);
+      var y = Math.random() * (window.innerHeight - button.offsetHeight);
+      button.style.position = 'absolute';
+      button.style.left = x + 'px';
+      button.style.top = y + 'px';
+    }
+
+    function fineButton() {
+      document.getElementById('title').innerHTML = "heheh ty :)";
+      document.getElementById('notFineButton').style.display = 'none';
+      event.target.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
